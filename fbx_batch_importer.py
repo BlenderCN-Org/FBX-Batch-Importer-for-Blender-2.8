@@ -41,10 +41,15 @@ class FbxImporterPanel(Panel):
         row.label(text="2)Hit The Import Button To Import:")
         
         row.operator("object.batch_fbx_import")
+        
+        row = layout.box()
+        row.label("3)Align all models")
+        
+        row.
 
 class BatchFbxImport(Operator):
     bl_idname = "object.batch_fbx_import"
-    bl_label = "FBX Batch Importer"
+    bl_label = "Import FBX Files"
     import_dir = ""
 
     def execute(self,context):
@@ -63,6 +68,14 @@ class BatchFbxImport(Operator):
         
         return{'FINISHED'}
 
+class AlignObjects(Operator):
+    bl_idname = "object.allign_objects"
+    bl_label = "Allign Objects"
+    
+    def execute(self,context):
+        
+        #TODO Write some stuff so that objects align in a square.
+    
 def register():
     bpy.utils.register_class(FbxImporterPanel)
     bpy.utils.register_class(BatchFbxImport)
